@@ -1,0 +1,28 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-offset-5">
+            <a class="main-link text-center" href="https://en.wikipedia.org/wiki/Special:Random">Click here for a random article</a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-offset-5">
+            <input type="text" placeholder="Search a random article" ng-model="$ctrl.article">
+            <button class="btn btn-primary" ng-click="$ctrl.randomArticle()"><span class="fa fa-wikipedia-w"></span></button>
+            <button class="btn btn-danger" ng-click="$ctrl.remove()"><span class="fa fa-remove"></span></button>
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="panel-position">
+            <ul ng-repeat="result in $ctrl.results">
+                <div class="panel panel-primary">
+                    <div  style="cursor: pointer" class="panel-heading"><a ng-href='{{result.page}}'>{{result.title}}</a></div>
+                    <div class="panel-body">
+                        {{result.description}}
+                    </div>
+                </div>
+            </ul>
+        </div>
+    </div>
+
+</div>
